@@ -1,5 +1,9 @@
 # MedEST-Open: Evidence-Conditioned Medical Epistemic State Tracking
 
+**Authors:** Surya Teja Avvaru¹ and Krishna Sai Pokala¹  
+**Affiliation:** ¹Independent Researcher  
+**Correspondence:** Surya Teja Avvaru  
+
 ## Abstract
 
 Clinical narratives continually revise the status of medical propositions as new evidence appears. We introduce MedEST-Open, an open research prototype for Medical Epistemic State Tracking: predicting how textual evidence updates proposition-level clinical states. The task is formulated as an evidence-conditioned semantic update problem: old state plus proposition plus evidence maps to a transition operator and a new epistemic state. Using MACCROBAT-derived weak labels, fine-tuned PubMedBERT achieves 0.908 macro F1 on a 7-way filtered transition task under case-level splitting. A small multitask neural head underperforms this linear baseline, suggesting that the current weak-label data regime favors stable linear classifiers over higher-capacity models. An automatic heuristic audit estimates that 76% of a 500-example sample is likely usable, with remaining errors mainly from ambiguous transitions and noisy proposition spans.

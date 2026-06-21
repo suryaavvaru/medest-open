@@ -120,3 +120,9 @@ This framing is useful for case reports, longitudinal notes, diagnostic reasonin
 ## Status
 
 Active research prototype. Current work focuses on manual validation, ablation studies, neural EpiDelta training, and scale-up to larger open case-report corpora.
+
+## Authors
+
+- Surya Teja Avvaru — Independent Researcher
+- Krishna Sai Pokala — Independent Researcher
+
