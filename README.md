@@ -2,9 +2,9 @@
 
 **A weakly supervised benchmark for evidence-conditioned medical epistemic state tracking.**
 
-MedEST-Open is an independent medical NLP research project by **Surya Teja Avvaru** and **Krishna Sai Pokala**. It studies how clinical propositions change state as new evidence appears in a medical case narrative.
+MedEST-Open is an independent medical NLP research project by **Surya Teja Avvaru** and **Krishna Sai Pokala**. It studies how medical propositions change state as new evidence appears in a clinical case narrative.
 
-Instead of only extracting static entities, events, assertion labels, or uncertainty cues, MedEST models a structured semantic update:
+MedEST models a structured semantic update:
 
 ```text
 old clinical state + proposition + evidence sentence -> transition operator -> new clinical state
@@ -29,6 +29,7 @@ The final high-end model is a fine-tuned PubMedBERT sequence classifier on the f
 | Neural multitask EpiDelta head | 0.6743 | 0.5796 | 0.6700 |
 | New-state logistic regression | 0.6795 | 0.5562 | 0.6773 |
 | All-transition logistic regression | 0.7072 | 0.4488 | 0.7162 |
+| Most-frequent baseline | 0.4100 | 0.0830 | 0.2380 |
 
 **Paper headline:** Fine-tuned PubMedBERT achieves **0.908 macro F1** on seven-way Medical Epistemic State Transition prediction in the MedEST-Open weak-label benchmark.
 
@@ -78,8 +79,6 @@ The correct interpretation is:
 
 > MedEST-Open demonstrates that evidence-conditioned medical transition labels are highly learnable under a transparent weak-label protocol. Expert-reviewed proposition trajectories are the next benchmark milestone.
 
-
-
 ## Repository contents
 
 ```text
@@ -91,10 +90,9 @@ medest/
 
 scripts/             pipeline, audit, reporting, and repo utilities
 docs/                final results, audit notes, methodology, decisions
-paper/               manuscript scaffold
+paper/               manuscript scaffold and final preprint
 results/             final result summaries
 examples/            small synthetic examples only
-preprint/            polished preprint PDF and source package
 ```
 
 Large raw data, embeddings, trained models, logs, downloads, virtual environments, and checkpoints are intentionally excluded.
