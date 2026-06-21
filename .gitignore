@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+
+# Data / model artifacts
+data/
+downloads/
+experiments/
+*.npy
+*.npz
+*.joblib
+*.pkl
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Logs
+*.log
+nohup.out
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
