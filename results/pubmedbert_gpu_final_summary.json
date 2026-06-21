@@ -1,0 +1,32 @@
+{
+  "task": "finetuned_text_transformer",
+  "mode": "filtered_transition",
+  "model_name": "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext",
+  "examples": 4207,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+  "best_epoch": 5,
+  "accuracy": 0.9060665362035225,
+  "macro_f1": 0.9075491699184628,
+  "weighted_f1": 0.9061799372797309,
+  "old_logreg_macro_f1": 0.6641094475245998,
+  "absolute_macro_f1_gain": 0.243439722393863,
+  "classes": [
+    "improving",
+    "introduced",
+    "no_change",
+    "recurrent",
+    "resolved",
+    "ruled_out",
+    "treated"
+  ],
+  "label_counts": {
+    "introduced": 1907,
+    "treated": 909,
+    "ruled_out": 446,
+    "improving": 357,
+    "resolved": 211,
+    "no_change": 202,
+    "recurrent": 175
+  }
+}

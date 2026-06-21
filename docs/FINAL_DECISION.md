@@ -1,29 +1,29 @@
 # Final Experiment Decision
 
-## Primary result
+## Final primary result
 
-The primary MedEST-Open result is the filtered 7-way transition task using PubMedBERT EpiDelta embeddings and balanced logistic regression.
+The final winning MedEST-Open model is a fine-tuned PubMedBERT text transformer trained on the 7-way filtered transition task.
 
-- Accuracy: 0.7369
-- Macro F1: 0.6641
-- Weighted F1: 0.7387
+- Model: `microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext`
+- Device: CUDA
+- GPU: NVIDIA GeForce RTX 3070 Ti Laptop GPU
+- Examples: 4,207
+- Best epoch: 5
+- Accuracy: 0.9061
+- Macro F1: 0.9075
+- Weighted F1: 0.9062
 
-This is the current strongest result and should be treated as the main paper/repo headline.
+## Baselines
 
-## Neural EpiDelta result
-
-A small multitask neural classifier was trained over the same EpiDelta embedding representation.
-
-- Transition accuracy: 0.6743
-- Transition macro F1: 0.5796
-- State accuracy: 0.5778
-- State macro F1: 0.4579
-
-The neural model underperformed the balanced logistic-regression baseline. This suggests that, under the current weak-label data regime, pretrained embeddings plus stable linear classifiers outperform a higher-capacity multitask head.
+| Model | Accuracy | Macro F1 | Weighted F1 |
+|---|---:|---:|---:|
+| Fine-tuned PubMedBERT | 0.9061 | 0.9075 | 0.9062 |
+| PubMedBERT EpiDelta embeddings + balanced logistic regression | 0.7369 | 0.6641 | 0.7387 |
+| Neural multitask EpiDelta head | 0.6743 | 0.5796 | 0.6700 |
 
 ## Weak-label audit
 
-An automatic heuristic weak-label audit was run to estimate likely noise modes.
+An automatic heuristic weak-label audit was used to estimate likely noise modes. This is not a replacement for expert annotation.
 
 ### 100-example audit
 
@@ -39,14 +39,10 @@ An automatic heuristic weak-label audit was run to estimate likely noise modes.
 - Bad transition: 6.8%
 - Bad proposition: 6.6%
 
-This should be described as an automatic heuristic audit, not a manual or expert annotation study.
+## Final paper framing
 
-## Paper framing
+The final headline is:
 
-The paper should emphasize:
+> Fine-tuned PubMedBERT achieves 0.908 macro F1 on 7-way Medical Epistemic State Transition prediction in the MedEST-Open weak-label benchmark.
 
-1. A new task formulation: Medical Epistemic State Tracking.
-2. Evidence-conditioned transition prediction.
-3. Fully open-data prototype based on MACCROBAT.
-4. Strong linear separability of transition states from EpiDelta PubMedBERT embeddings.
-5. Clear remaining challenges: weak-label noise, rare transitions, and resolved/recurrent ambiguity.
+The claim should remain careful: this is a strong open-data weak-label prototype result, not a clinically validated expert-gold benchmark.

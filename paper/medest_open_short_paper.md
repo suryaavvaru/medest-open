@@ -2,7 +2,7 @@
 
 ## Abstract
 
-Clinical narratives continually revise the status of medical propositions as new evidence appears. We introduce MedEST-Open, an open research prototype for Medical Epistemic State Tracking: predicting how textual evidence updates proposition-level clinical states. The task is formulated as an evidence-conditioned semantic update problem: old state plus proposition plus evidence maps to a transition operator and a new epistemic state. Using MACCROBAT-derived weak labels and PubMedBERT EpiDelta embeddings, balanced logistic regression achieves 0.664 macro F1 on a 7-way filtered transition task under case-level splitting. A small multitask neural head underperforms this linear baseline, suggesting that the current weak-label data regime favors stable linear classifiers over higher-capacity models. An automatic heuristic audit estimates that 76% of a 500-example sample is likely usable, with remaining errors mainly from ambiguous transitions and noisy proposition spans.
+Clinical narratives continually revise the status of medical propositions as new evidence appears. We introduce MedEST-Open, an open research prototype for Medical Epistemic State Tracking: predicting how textual evidence updates proposition-level clinical states. The task is formulated as an evidence-conditioned semantic update problem: old state plus proposition plus evidence maps to a transition operator and a new epistemic state. Using MACCROBAT-derived weak labels, fine-tuned PubMedBERT achieves 0.908 macro F1 on a 7-way filtered transition task under case-level splitting. A small multitask neural head underperforms this linear baseline, suggesting that the current weak-label data regime favors stable linear classifiers over higher-capacity models. An automatic heuristic audit estimates that 76% of a 500-example sample is likely usable, with remaining errors mainly from ambiguous transitions and noisy proposition spans.
 
 ## 1. Introduction
 
@@ -66,7 +66,7 @@ Text inputs are embedded with PubMedBERT. Classical classifiers and a small neur
 | Transition prediction | filtered_transition | Logistic Regression, balanced | 4,207 | 0.7369 | 0.6641 | 0.7387 |
 | Transition prediction | filtered_transition | Neural multitask head | 4,207 | 0.6743 | 0.5796 | 0.6700 |
 
-The strongest result is balanced logistic regression over EpiDelta PubMedBERT embeddings on the 7-way filtered transition task.
+The strongest result is end-to-end fine-tuned PubMedBERT on the 7-way filtered transition task.
 
 ### 5.2 Neural Result
 
@@ -122,4 +122,13 @@ Future work should include:
 
 ## 10. Conclusion
 
-MedEST-Open demonstrates that evidence-conditioned clinical state-update prediction is feasible using fully open data. The current best result, 0.664 macro F1 on 7-way transition prediction, supports the central claim that semantic update operators over clinical propositions are learnable from medical case narratives.
+MedEST-Open demonstrates that evidence-conditioned clinical state-update prediction is feasible using fully open data. The current best result, 0.908 macro F1 on 7-way transition prediction, supports the central claim that semantic update operators over clinical propositions are learnable from medical case narratives.
+
+
+## Final GPU Transformer Result
+
+After resolving the CUDA/PyTorch environment and running on an RTX 3070 Ti Laptop GPU, fine-tuned PubMedBERT became the strongest model. The model achieved 0.9061 accuracy, 0.9075 macro F1, and 0.9062 weighted F1 on the 7-way filtered MedEST transition task. The best checkpoint occurred at epoch 5.
+
+This result supersedes the earlier logistic-regression EpiDelta embedding result of 0.6641 macro F1. The earlier result remains useful as a strong linear-probe baseline, but the final headline model is the fine-tuned PubMedBERT text transformer.
+
+The result should be interpreted as a strong weak-label benchmark result, not as expert-adjudicated clinical validation.
