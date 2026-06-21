@@ -1,0 +1,33 @@
+{
+  "project": "MedEST-Open",
+  "model_family": "EpiDelta",
+  "dataset_seed": "MACCROBAT",
+  "split": "case-level",
+  "best_results": [
+    {
+      "task": "new_state",
+      "mode": "all_state",
+      "model": "logreg_scaled_balanced",
+      "accuracy": 0.6795,
+      "macro_f1": 0.5562,
+      "weighted_f1": 0.6773
+    },
+    {
+      "task": "transition",
+      "mode": "all_transition",
+      "model": "logreg_balanced",
+      "accuracy": 0.7072,
+      "macro_f1": 0.4488,
+      "weighted_f1": 0.7162
+    },
+    {
+      "task": "transition",
+      "mode": "filtered_transition",
+      "model": "logreg_balanced",
+      "accuracy": 0.7369,
+      "macro_f1": 0.6641,
+      "weighted_f1": 0.7387
+    }
+  ],
+  "main_takeaway": "EpiDelta inputs reach 0.6641 macro F1 on a 7-way filtered transition prediction task under case-level split."
+}

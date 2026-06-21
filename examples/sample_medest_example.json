@@ -1,0 +1,10 @@
+{
+  "case_id": "example_case_001",
+  "segment_id": "s0004",
+  "proposition_text": "patient has pulmonary embolism",
+  "old_state": "suspected",
+  "evidence_text": "CT angiography showed no evidence of pulmonary embolism.",
+  "transition": "ruled_out",
+  "new_state": "ruled_out",
+  "confidence": "example"
+}
