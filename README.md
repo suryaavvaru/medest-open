@@ -78,14 +78,7 @@ The correct interpretation is:
 
 > MedEST-Open demonstrates that evidence-conditioned medical transition labels are highly learnable under a transparent weak-label protocol. Expert-reviewed proposition trajectories are the next benchmark milestone.
 
-## Preprint
 
-The current polished preprint files are under `preprint/`:
-
-```text
-preprint/MedEST_Open_final_fixed_preprint.pdf
-preprint/MedEST_Open_final_fixed_arxiv_source.zip
-```
 
 ## Repository contents
 
