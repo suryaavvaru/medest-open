@@ -123,6 +123,5 @@ Active research prototype. Current work focuses on manual validation, ablation s
 
 ## Authors
 
-- Surya Teja Avvaru — Independent Researcher
-- Krishna Sai Pokala — Independent Researcher
-
+- Surya Teja Avvaru — Independent Researcher — suryata1@umbc.edu
+- Krishna Sai Pokala — Independent Researcher — ok50250@umbc.edu

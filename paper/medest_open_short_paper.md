@@ -2,7 +2,8 @@
 
 **Authors:** Surya Teja Avvaru¹ and Krishna Sai Pokala¹  
 **Affiliation:** ¹Independent Researcher  
-**Correspondence:** Surya Teja Avvaru  
+**Correspondence:** Surya Teja Avvaru <suryata1@umbc.edu>  
+**Author emails:** suryata1@umbc.edu; ok50250@umbc.edu  
 
 ## Abstract
 
